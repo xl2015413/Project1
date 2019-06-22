@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+		<tr>
+			<th>部门编号</th>
+			<th>部门名称</th>
+			<th>部门所在位置</th>			
+		</tr>
+		
+		<tr th:each="list : ${list}" >
+			<th th:text="${list.deptno}">部门编号</th>
+			<th th:text="${list.dname}">部门名称</th>
+			<th th:text="${list.loc}">部门所在位置</th>			
+			<th ><a  href="show.html" th:href="@{deletedept(id=${list.deptno})}">删除</a><a href="show.html" th:href="@{updatedept(id=${list.deptno})}">修改</a></th>
+		</tr>
+
+</table>
+</body>
+</html>

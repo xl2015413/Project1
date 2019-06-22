@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qphone.dao.DeptBeanDao">
+  <select id="selectAll" resultType="com.qphone.pojo.DeptBean">
+    select * from dept 
+  </select>
+  <insert id="insertDept" parameterType="com.qphone.pojo.DeptBean">
+  insert into dept values(#{deptno},#{dname},#{loc})
+  </insert>
+  <delete id="deleteDept" parameterType="int">
+  delete from dept where deptno=#{id}
+  </delete>
+  <update id="updateDept" parameterType="com.qphone.pojo.DeptBean">
+  update dept set dname=#{dname},loc=#{loc} where deptno=#{deptno}
+  </update>
+  <select id="selectOne" resultType="com.qphone.pojo.DeptBean"  parameterType="int">
+  select * from dept where deptno=#{id}
+  </select>
+</mapper>
